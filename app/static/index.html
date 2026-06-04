@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JARVIS</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>JARVIS</h1>
+          <p id="status">Local assistant offline until paired.</p>
+        </div>
+        <div class="actions">
+          <button id="spotifyButton" title="Connect Spotify">Spotify</button>
+          <button id="resetButton" title="Reset encrypted memory">Reset</button>
+        </div>
+      </section>
+
+      <section class="auth" id="authPanel">
+        <label for="tokenInput">Pairing token</label>
+        <div class="auth-row">
+          <input id="tokenInput" type="password" autocomplete="off" placeholder="Paste JARVIS_AUTH_TOKEN" />
+          <button id="saveTokenButton">Pair</button>
+        </div>
+      </section>
+
+      <section id="chatLog" class="chat-log" aria-live="polite"></section>
+
+      <section id="confirmPanel" class="confirm-panel hidden">
+        <span id="confirmText"></span>
+        <button id="approveButton">Approve</button>
+        <button id="denyButton">Deny</button>
+      </section>
+
+      <form id="chatForm" class="composer">
+        <button type="button" id="micButton" title="Push to talk">Mic</button>
+        <input id="messageInput" type="text" autocomplete="off" placeholder="Ask JARVIS..." />
+        <button type="submit" title="Send message">Send</button>
+      </form>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
