@@ -1,6 +1,6 @@
-# JARVIS Local Assistant
+# Otto
 
-Local JARVIS scaffold using Ollama + Mistral 7B, FastAPI, browser voice chat, Spotify playback tools, WiZ light tools, encrypted memory, and private remote access through Tailscale.
+Otto is a helpful local assistant scaffold using Ollama + Mistral 7B, FastAPI, browser voice chat, Spotify playback tools, WiZ light tools, encrypted memory, and private remote access through Tailscale.
 
 ## What Is Implemented
 
@@ -23,7 +23,7 @@ Local JARVIS scaffold using Ollama + Mistral 7B, FastAPI, browser voice chat, Sp
 ollama pull mistral:7b
 ```
 
-4. Start JARVIS:
+4. Start Otto:
 
 ```powershell
 .\scripts\run-dev.ps1
@@ -54,7 +54,7 @@ JARVIS_SPOTIFY_CLIENT_ID=...
 JARVIS_SPOTIFY_CLIENT_SECRET=...
 ```
 
-4. Open JARVIS in the browser, pair with the token, then press `Spotify`.
+4. Open Otto in the browser, pair with the token, then press `Spotify`.
 
 Spotify playback control requires Spotify Premium and an active Spotify Connect device.
 
@@ -67,7 +67,7 @@ JARVIS_WIZ_LIGHTS=desk=192.168.1.50,bedroom=192.168.1.51
 JARVIS_WIZ_BROADCAST=192.168.1.255
 ```
 
-You can also ask JARVIS to discover WiZ lights, but static IP mappings are more reliable for voice control. Reserve those IPs in your router.
+You can also ask Otto to discover WiZ lights, but static IP mappings are more reliable for voice control. Reserve those IPs in your router.
 
 ## Voice Setup
 
@@ -78,7 +78,7 @@ JARVIS_WHISPER_CPP_BINARY=C:\path\to\whisper-cli.exe
 JARVIS_WHISPER_CPP_MODEL=C:\path\to\ggml-base.en.bin
 ```
 
-The browser records audio, sends it to JARVIS, JARVIS transcribes it locally, sends the text to Ollama, then can play TTS audio back.
+The browser records audio, sends it to Otto, Otto transcribes it locally, sends the text to Ollama, then can play TTS audio back.
 
 ## Secure Remote Access
 
@@ -88,7 +88,7 @@ Recommended v1 route:
 2. Enable MFA on the Tailscale account.
 3. Require device approval.
 4. Do not configure router port-forwarding.
-5. Keep JARVIS bound to `127.0.0.1` unless you intentionally bind it to the Tailscale IP.
+5. Keep Otto bound to `127.0.0.1` unless you intentionally bind it to the Tailscale IP.
 6. If binding to the Tailscale IP, allow only approved Tailscale device IPs through Windows Firewall.
 
 Example firewall helper:
